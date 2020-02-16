@@ -12,13 +12,13 @@
     <!--</span>-->
     <!--</el-dialog>-->
     <!--<el-button type="primary" @click="getData">确 定</el-button>-->
-    <h1>User Manager</h1>
-    <el-form :inline="true" :model="user" style="width: 100%" class="demo-form-inline">
-      <el-form-item label="用户名称" :inline="true">
-        <el-input v-model="user.Sname" placeholder="用户名称"></el-input>
+    <h1 class="title">User Manager</h1>
+    <el-form :inline="true" :model="user" style="width: 100%" :rules="rules" label-width="100px">
+      <el-form-item label="用户名称" status-icon>
+        <el-input v-model="user.Sname" placeholder="用户名称"  maxlength="100"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="findUser">用户查询</el-button>
+        <el-button type="primary" @click="findUser" style="width: 90px;height: 40px;">用户查询</el-button>
       </el-form-item>
     </el-form>
 
@@ -49,12 +49,12 @@
         width="100">
         <template slot-scope="user" >
           <el-button @click="deleteMusic(user.row)" size="small" type="text" style="background: aquamarine" aria-label="shanchu">删除</el-button>
-          <el-button @click="dialogVisible=true" type="text" size="small"  style="background: aquamarine">编辑</el-button>
+          <!--<el-button @click="dialogVisible=true" type="text" size="small"  style="background: aquamarine">编辑</el-button>-->
         </template>
       </el-table-column>
 
     </el-table>
-    <!--<h2>总价格： {{priceTotal}}</h2>-->
+    <h2>总用户数： {{priceTotal}}</h2>
   </div>
 </template>
 
@@ -106,14 +106,30 @@
             this.users.splice(index, 1)
           })
       }
+    },
+    computed: {
+      priceTotal() {
+        return this.users.length
+      }
     }
-    // computed: {
-    //   priceTotal() {
-    //     return this.musics.reduce((prev, book) => prev + book.price, 0)
-    //   }
-    // }
   }
 </script>
 
 <style scoped>
+  .title{
+    line-height: 60px;
+    margin-top: 1px;
+  }
+  .el-form-item{
+    line-height: 45px;
+    margin-bottom: 10px;
+  }
+  .el-form{
+    line-height: 50px;
+  }
+  .el-button{
+    line-height: 10px;
+    width: 30px;
+    height: 25px;
+  }
 </style>

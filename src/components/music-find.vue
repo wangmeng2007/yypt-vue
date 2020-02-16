@@ -1,12 +1,12 @@
 <template>
   <div>
-  <h1>Music Manager</h1>
+  <h1 class="title">Music Manager</h1>
     <el-form  :inline="true" :model="music" style="width: 100%" class="demo-form-inline">
       <el-form-item  :inline="true">
         <el-input v-model="music.Sname" placeholder="歌曲查询"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="findMusic">歌曲查询</el-button>
+        <el-button type="primary" @click="findMusic" style="width: 90px;height: 40px;">歌曲查询</el-button>
       </el-form-item>
     </el-form>
     <el-form  :inline="true" :model="Special" style="width: 100%" class="demo-form-inline">
@@ -14,7 +14,7 @@
           <el-input v-model="Special.special" placeholder="专辑查询"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="findspecial">专辑查询</el-button>
+          <el-button type="primary" @click="findspecial" style="width: 90px;height: 40px;">专辑查询</el-button>
         </el-form-item>
     </el-form>
     <el-table
@@ -127,5 +127,20 @@
 </script>
 
 <style scoped>
-
+  .title{
+    line-height: 60px;
+    margin-top: 1px;
+  }
+  .el-form-item{
+    line-height: 45px;
+    margin-bottom: 10px;
+  }
+  .demo-form-inline{
+    line-height: 50px;
+  }
+  .el-button{
+    line-height: 10px;
+    width: 30px;
+    height: 25px;
+  }
 </style>

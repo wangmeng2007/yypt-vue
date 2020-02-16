@@ -7,22 +7,29 @@
     <!--<div style="position: relative;float: left;display:inline;background-color: blue">-->
       <!--<img src="./xh_logo.png" alt="" >-->
     <!--</div>-->
-      <el-row >
-        <el-col :span="4">
-          <img src="./xh_logo.png" alt="" style="width:207px;height:72px;position: relative;float: left;display:inline;background-color: blue;">
-        </el-col>
-        <el-col :span="20" >
-          <Header></Header>
-        </el-col>
-      </el-row>
+      <!--<el-row >-->
+        <!--<el-col :span="4">-->
+          <!--<img src="./xh_logo.png" alt="" style="width:100%;height:72px;position: relative;float: left;display:inline;background-color: blue;">-->
+        <!--</el-col>-->
+        <!--<el-col :span="20" >-->
+          <!--<Header></Header>-->
+        <!--</el-col>-->
+      <!--</el-row>-->
+    <div>
       <el-container>
-        <el-aside style="width: 207px;height: 700px">
-          <m-aside0></m-aside0>
-        </el-aside>
-        <el-main style="height: 700px">
-          <router-view></router-view>
-        </el-main>
+        <el-header style="width: 100%;height: 72px; position: relative;float: left;display:inline;padding: 0px;margin: 0px;">
+          <Header></Header>
+        </el-header>
+        <el-container style="margin-top: 3px">
+          <el-aside style="width: 207px;height: 700px">
+            <m-aside0></m-aside0>
+          </el-aside>
+          <el-main style="height: 700px">
+            <router-view></router-view>
+          </el-main>
+        </el-container>
       </el-container>
+    </div>
   </div>
 </template>
 
@@ -43,7 +50,7 @@ export default {
 }
 </script>
 <style scoped>
-.el-header,
+.el-header{}
 .el-footer {
   background-color: #b3c0d1;
   /*color: #333;*/

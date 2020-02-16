@@ -13,6 +13,9 @@
                  unique-opened
                  router>
             <!--存在子菜单-->
+            <el-menu-item>
+               <img src="./xh_logo.png" alt="" style="width:100%;height:72px;position: relative;float: left;display:inline;background-color: blue;">
+            </el-menu-item>
             <el-menu-item v-for="(item) in list" :key="item.id" @click="Click(item.id)">
                 <el-submenu v-if="item.children" :index="item.id">
                     <el-menu-item >
@@ -69,8 +72,9 @@ export default {
 
 <style scoped lang="less">
     .m-header{
+        width: 100%;
         position: relative;
-        height: 75px;
+        height: 72px;
         text-align: center;
     img{
         width: 187px;
